@@ -74,7 +74,7 @@ namespace iMoBio.PlasmidCanvas
             // TODO:
 
             #region Add annotation
-            int bp = Plasmid.BaseCount;
+            int bp = PlasmidRecord.BaseCount;
             Point plasmidLocation = Location;
             double plasmidLength = Length;
             annotations = new FeatureUI[plasmid.FeatureCount];

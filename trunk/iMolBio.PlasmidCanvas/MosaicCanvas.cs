@@ -88,7 +88,7 @@ namespace iMoBio.PlasmidCanvas
             // TODO:
 
             #region Add annotation
-            int bpTotal = Plasmid.BaseCount;
+            int bpTotal = PlasmidRecord.BaseCount;
             annotations = new FeatureUI[plasmid.FeatureCount];
             for (int i = 0; i < plasmid.FeatureCount; i++)
             {
@@ -142,12 +142,12 @@ namespace iMoBio.PlasmidCanvas
             protected override void OnRender(DrawingContext dc)
             {
                 
-                int seqLen = Owner.Plasmid.Length;
+                int seqLen = Owner.PlasmidRecord.Length;
                 int mantissa = (int)Math.Ceiling(Math.Log10(seqLen));
                 double charWidth = MediaExt.CharWidth(UserSetting.INSTANT.SeqText_FontSize);
                 double left = (mantissa + 2) * charWidth;
 
-                for (int i = Owner.CurrentBlockNo; i*Owner.NumberOfSequencePerLine < Owner.Plasmid.BaseCount; ++i)
+                for (int i = Owner.CurrentBlockNo; i*Owner.NumberOfSequencePerLine < Owner.PlasmidRecord.BaseCount; ++i)
                 {
                     if ((i + 1) * BlockHeight > Height)
                         return;
@@ -162,14 +162,14 @@ namespace iMoBio.PlasmidCanvas
                         {
                             if (nb + j > seqLen) break;
                             int sbLen = Math.Min(Owner.WordSize, Math.Abs(seqLen - (nb + j)));
-                            sb.Append(Owner.Plasmid.Seq.Substring(nb + j, sbLen) + " ");
+                            sb.Append(Owner.PlasmidRecord.Seq.Substring(nb + j, sbLen) + " ");
                         }
                         sb.Remove(sb.Length - 1, 1);
                         text = sb.ToString();
                     }
                     else
                     {
-                        text += Owner.Plasmid.Seq.Substring(nb, len);
+                        text += Owner.PlasmidRecord.Seq.Substring(nb, len);
                     }
 
                     FormattedText seqText = new FormattedText(text,
@@ -211,7 +211,7 @@ namespace iMoBio.PlasmidCanvas
             protected override void OnRender(DrawingContext dc)
             {
                 #region Draw annotation
-                int bp = Owner.Plasmid.BaseCount;
+                int bp = Owner.PlasmidRecord.BaseCount;
                 double numOfBlockd = (1.0 * bp) / Owner.NumberOfSequencePerLine;
                 int numOfBlock = (int)Math.Ceiling(numOfBlockd);
                 double charWidth = Width / Owner.NumberOfSequencePerLine;

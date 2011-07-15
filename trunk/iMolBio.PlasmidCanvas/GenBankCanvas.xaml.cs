@@ -33,7 +33,7 @@ namespace iMoBio.PlasmidCanvas
 
         #region ISeqCanvas Members
 
-        public PlasmidRecord Plasmid
+        public PlasmidRecord PlasmidRecord
         {
             get
             {

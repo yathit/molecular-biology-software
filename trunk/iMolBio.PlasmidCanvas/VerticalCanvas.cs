@@ -27,7 +27,7 @@ namespace iMoBio.PlasmidCanvas
         override public void Redraw()
         {
             #region Draw annotation
-            int bp = Plasmid.BaseCount;
+            int bp = PlasmidRecord.BaseCount;
             Point plasmidLocation = Location;
             double plasmidLength = Length;
             var visibles = annotations.Where(annotation => annotation.Visible);

@@ -88,7 +88,7 @@ namespace iMoBio.PlasmidCanvas
 
         public void Redraw() { }
 
-        public PlasmidRecord Plasmid
+        public PlasmidRecord PlasmidRecord
         {
             get
             {
@@ -157,7 +157,7 @@ namespace iMoBio.PlasmidCanvas
             // TODO:
 
             #region Add annotation
-            int bpTotal = Plasmid.BaseCount;
+            int bpTotal = PlasmidRecord.BaseCount;
             foreach (Feature ft in plasmid.Features)
             {
                 Layer layer = layerManager[ft.Key];
@@ -416,13 +416,13 @@ namespace iMoBio.PlasmidCanvas
             public void OnSelectionChanged(object sender, RoutedEventArgs e)
             {
                 DrawingContext dc = selectionVisual.RenderOpen();
-                if (parent.Plasmid.Selection == null)
+                if (parent.PlasmidRecord.Selection == null)
                 {
                     dc.Close();
                     return;
                 }
 
-                List<Range> selection = parent.Plasmid.Selection;
+                List<Range> selection = parent.PlasmidRecord.Selection;
 
                 double h = parent.LayerManager[Layer.LAYER_MAINSTRAND].Width;
                 if (h < 0)
@@ -430,7 +430,7 @@ namespace iMoBio.PlasmidCanvas
                 //Console.WriteLine(this.ToString() + ": no: " + parent.PlasmidRecord.Selection.Count + 
                 //    ", Start: " + parent.PlasmidRecord.Selection[0].Start + ", End: " + parent.PlasmidRecord.Selection[0].End);
                 
-                foreach (Range range in parent.Plasmid.Selection)
+                foreach (Range range in parent.PlasmidRecord.Selection)
                 {
                     Rect[] rects = parent.DrawRects(range.Start, range.End, h, 0);
                     foreach (Rect r in rects)
@@ -479,7 +479,7 @@ namespace iMoBio.PlasmidCanvas
                     if (e.LeftButton == MouseButtonState.Pressed)
                     {
                         // Do a selection
-                        parent.Plasmid.SelectTo(bp);
+                        parent.PlasmidRecord.SelectTo(bp);
                     }
                 }
                 else
@@ -501,7 +501,7 @@ namespace iMoBio.PlasmidCanvas
                     {
                         // TODO: multiple selection feature
                         // Start a selection
-                        parent.Plasmid.SelectStart(bp);
+                        parent.PlasmidRecord.SelectStart(bp);
                         //Console.WriteLine("To: " + bp + blockNo * numberOfCharPerLine);
                     }
                 }

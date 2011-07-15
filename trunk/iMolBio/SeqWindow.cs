@@ -25,6 +25,7 @@ namespace iMoBio
     {
         private string _fileName;
         private PlasmidRecord plasmid;
+        //private Dictionary<string, UIElement> canvases = new Dictionary<string, UIElement>();
 
         TabControl tabCon = new TabControl();
 
@@ -33,22 +34,19 @@ namespace iMoBio
         {
             tabCon.TabStripPlacement = System.Windows.Controls.Dock.Bottom;
             TabItem ti = new TabItem();
-            //ti.Header = SimpleCircularCanvas.CanvasType;
-            //tabCon.Items.Add(ti);
+            ti.Header = CircularCanvas.CanvasType;
+            tabCon.Items.Add(ti);
             ti = new TabItem();
             ti.Header = HorizontalCanvas.CanvasType;
             tabCon.Items.Add(ti);
             ti = new TabItem();
             ti.Header = VerticalCanvas.CanvasType;
             tabCon.Items.Add(ti);
-            //ti = new TabItem();
-            //ti.Header = SequenceCanvas.CanvasType;
-            //tabCon.Items.Add(ti);
-            //ti = new TabItem();
-            //ti.Header = GenBankCanvas.CanvasType;
-            //tabCon.Items.Add(ti);
             ti = new TabItem();
-            ti.Header = CircularCanvas.CanvasType;
+            ti.Header = SequenceCanvas.CanvasType;
+            tabCon.Items.Add(ti);
+            ti = new TabItem();
+            ti.Header = GenBankCanvas.CanvasType;
             tabCon.Items.Add(ti);
             //ti = new TabItem();
             //ti.Header = MosaicCanvas.CanvasType;
@@ -95,16 +93,8 @@ namespace iMoBio
                 InsdcRecord[] records = GenBank.parse(_fileName);
                 plasmid = new PlasmidRecord(records[0]);
 
-                switch (result.Topology)
-                {
-                    case LocusTopology.Linear:
-                        CreateCanvas(HorizontalCanvas.CanvasType);
-                        break;
-                    default:
-                        CreateCanvas(CircularCanvas.CanvasType);
-                        tabCon.SelectedIndex = 2;
-                        break;
-                }
+
+                CreateCanvas(result.Topology.ToString());
 
             }
             else
@@ -119,56 +109,61 @@ namespace iMoBio
 
         private void CreateCanvas(string canvasType)
         {
-            if (canvasType == HorizontalCanvas.CanvasType)
+            if (canvasType == CircularCanvas.CanvasType)
             {
-                HorizontalCanvas activeCanvas = new HorizontalCanvas();
-                activeCanvas.Plasmid = plasmid;
+                CircularCanvas activeCanvas = new CircularCanvas();
+                activeCanvas.PlasmidRecord = plasmid;
                 ScrollViewer sc = new ScrollViewer();
                 sc.Content = activeCanvas;
                 sc.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
                 sc.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-                (tabCon.Items[tabCon.SelectedIndex] as TabItem).Content = sc;
-                //tabCon.SelectedIndex = 1;
+                (tabCon.Items[0] as TabItem).Content =  sc;
+                tabCon.SelectedIndex = 0;
+            }
+            else if (canvasType == HorizontalCanvas.CanvasType)
+            {
+                HorizontalCanvas activeCanvas = new HorizontalCanvas();
+                activeCanvas.PlasmidRecord = plasmid;
+                ScrollViewer sc = new ScrollViewer();
+                sc.Content = activeCanvas;
+                sc.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+                sc.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+                (tabCon.Items[1] as TabItem).Content = sc;
+                tabCon.SelectedIndex = 1;
             }
             else if (canvasType == VerticalCanvas.CanvasType)
             {
                 VerticalCanvas activeCanvas = new VerticalCanvas();
-                activeCanvas.Plasmid = plasmid;
+                activeCanvas.PlasmidRecord = plasmid;
                 ScrollViewer sc = new ScrollViewer();
                 sc.Content = activeCanvas;
                 sc.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
                 sc.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
-                (tabCon.Items[tabCon.SelectedIndex] as TabItem).Content = sc;
-                
+                (tabCon.Items[2] as TabItem).Content = sc;
+                tabCon.SelectedIndex = 2;
             }
             else if (canvasType == SequenceCanvas.CanvasType)
             {
                 SequenceCanvas activeCanvas = new SequenceCanvas();
-                activeCanvas.Plasmid = plasmid;
-                (tabCon.Items[tabCon.SelectedIndex] as TabItem).Content = activeCanvas;
-              
+                activeCanvas.PlasmidRecord = plasmid;
+                (tabCon.Items[3] as TabItem).Content = activeCanvas;
+                tabCon.SelectedIndex = 3;
             }
             else if (canvasType == GenBankCanvas.CanvasType)
             {
                 GenBankCanvas activeCanvas = new GenBankCanvas();
-                activeCanvas.Plasmid = plasmid;
-                (tabCon.Items[tabCon.SelectedIndex] as TabItem).Content = activeCanvas;
-              
+                activeCanvas.PlasmidRecord = plasmid;
+                (tabCon.Items[4] as TabItem).Content = activeCanvas;
+                tabCon.SelectedIndex = 4;
             }
             else if (canvasType == MosaicCanvas.CanvasType)
             {
                 MosaicCanvas activeCanvas = new MosaicCanvas();
-                activeCanvas.Plasmid = plasmid;
-                (tabCon.Items[tabCon.SelectedIndex] as TabItem).Content = activeCanvas;
-               
+                activeCanvas.PlasmidRecord = plasmid;
+                (tabCon.Items[5] as TabItem).Content = activeCanvas;
+                tabCon.SelectedIndex = 5;
             }
-            else if (canvasType == CircularCanvas.CanvasType)
-            {
-                CircularCanvas activeCanvas = new CircularCanvas();
-                activeCanvas.Plasmid = plasmid;
-                (tabCon.Items[2] as TabItem).Content = activeCanvas;
-               
-            }
+            
         }
 
 

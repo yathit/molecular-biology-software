@@ -128,7 +128,7 @@ namespace iMoBio.PlasmidCanvas
         /// <summary>
         /// Get the plasmid record or set for the first time. Changing this will throw error.
         /// </summary>
-        public PlasmidRecord Plasmid
+        public PlasmidRecord PlasmidRecord
         {
             get
             {
