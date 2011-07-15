@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="iMoBio.PlasmidCanvas.SequenceCanvas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <DockPanel MinHeight="200" MinWidth="600" >
+        <StackPanel Name="rulerPanel" Orientation="Horizontal" DockPanel.Dock="Top"  
+                    Background="Transparent">
+            <!--
+            <TickBar Width="400" Name="tickBar"  Fill="Gray" Height="20" />
+            -->
+        </StackPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas Name="mainPanel"/>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

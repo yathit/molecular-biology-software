@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="iMoBio.PlasmidCanvas.GenBankCanvas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="Auto" Height="Auto">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Control.FontFamily" Value="Lucida Console" />
+            <Setter Property="Control.Margin" Value="0" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Control.FontFamily" Value="Lucida Console" />
+            <Setter Property="Control.Margin" Value="0" />
+            <Setter Property="Control.VerticalAlignment" Value="Center" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Control.Background" Value="White" />
+            <Setter Property="Control.Margin" Value="0" />
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+          
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="LOCUS       " Grid.Row="0" Grid.Column="0" />
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                    <TextBox MinWidth="60" Name="txtName" Text="Name" Grid.Row="1"  />
+                    <Label Name="lblBaseCount"  />
+                    <Label Name="lblStrandedness" Content="bp"  />
+                    <TextBox Name="txtMoltype" Text="DNA"  />
+                    <TextBox Name="txtTopology" Text="linear"  />
+                    <TextBox Name="txtDivision" Text="   "   />
+                    <TextBox Name="txtUpdate_date" Text="  "   />
+                </StackPanel>
+                <Label Content="DEFINITION  " Grid.Row="1" Grid.Column="0"   />
+                <TextBox Name="txtDefinition" Grid.Row="1" Grid.Column="1"  />
+                <Label Content="ACCESSION   " Grid.Row="2" Grid.Column="0"  />
+                <TextBox Name="txtAccession" Grid.Row="2" Grid.Column="1"  />
+                <Label Content="VERSION     " Grid.Row="3" Grid.Column="0"  />
+                <TextBox Name="txtVersion" Grid.Row="3" Grid.Column="1"  />
+                <Label Content="KEYWORDS    " Grid.Row="4" Grid.Column="0"  />
+                <TextBox Name="txtKeywords" Grid.Row="4" Grid.Column="1"  />
+                <Label Content="SOURCE      " Grid.Row="5" Grid.Column="0"  />
+                <TextBox Name="txtSource" Grid.Row="5" Grid.Column="1"  />
+                <Label Content="  ORGANISM  " Grid.Row="6" Grid.Column="0"  />
+                <TextBox Name="txtOrganism" Grid.Row="6" Grid.Column="1"  />
+            </Grid>
+            <Expander IsExpanded="True" BorderThickness="4">
+                <Expander.Header>
+                    <StackPanel Orientation="Horizontal">                       
+                        <Label Content="References   "  FontStyle="Italic"/>
+                        <Button  >Add</Button>                            
+                    </StackPanel>                    
+                </Expander.Header>               
+                <Expander IsExpanded="True">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="REFERENCE  "  />
+                            <Button >Remove</Button>
+                        </StackPanel>
+                    </Expander.Header>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Content="  AUTHORS   " Grid.Row="0" Grid.Column="0"  />
+                            <TextBox Name="txtAuthers" Grid.Row="0" Grid.Column="1"  />
+                            <Label Content="  TITLE     " Grid.Row="1" Grid.Column="0"  />
+                            <TextBox Name="txtTitle" Grid.Row="1" Grid.Column="1"  />
+                            <Label Content="  JOURNAL   " Grid.Row="2" Grid.Column="0"  />
+                            <TextBox Name="txtJournal" Grid.Row="2" Grid.Column="1"  />
+                            <Label Content="  MEDLINE   " Grid.Row="3" Grid.Column="0"  />
+                            <TextBox Name="txtMedline" Grid.Row="3" Grid.Column="1"  />
+
+                        </Grid>
+
+                    </StackPanel>
+                </Expander>
+            </Expander>
+            <Expander IsExpanded="True">
+                <Expander.Header>
+                    FEATURES
+                </Expander.Header>
+                <StackPanel Orientation="Vertical" Name="featurePanel">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

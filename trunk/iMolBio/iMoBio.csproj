@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE0ABF63-D436-4B91-8F12-E3EF0E539CFD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iMoBio</RootNamespace>
+    <AssemblyName>iMoBio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Divelements.SandDock, Version=1.4.1.2, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3, processorArchitecture=MSIL" />
+    <Reference Include="Divelements.SandDock.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=75b7ec17dd7c14c3, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.0.8211.13450, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SeqWindow.cs" />
+    <Compile Include="ViewerWindows.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BioCSharp.Algo\BioCSharp.Algo.csproj">
+      <Project>{8842742F-6C54-4F78-99FB-87828CE8F942}</Project>
+      <Name>BioCSharp.Algo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BioCSharp\BioCSharp.csproj">
+      <Project>{4CB9774C-A138-4664-85CE-27607EC94684}</Project>
+      <Name>BioCSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iMolBio.PlasmidCanvas\iMoBio.PlasmidCanvas.csproj">
+      <Project>{BF6427E0-425E-4BD0-B92A-1496F0CB5209}</Project>
+      <Name>iMoBio.PlasmidCanvas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiAlign\iMoBio.Controls.csproj">
+      <Project>{C7CAE21B-0268-4BD2-87E6-8D91F2094176}</Project>
+      <Name>iMoBio.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResourceLibrary\BaseLibrary.csproj">
+      <Project>{3EBAAC9E-B5A9-4516-9991-6A2AAE1A7E71}</Project>
+      <Name>BaseLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ActualSizeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AddTableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AddToFavoritesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsBottomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsCenteredHorizontalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsCenteredVerticalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsLeftHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsRightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignObjectsTopHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignTableCellMiddleCenterHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignTableCellMiddleLeftJustHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignTableCellMiddleRightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AlignToGridHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ArrangeSideBySideHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ArrangeWindowsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AttachmentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\AudioHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BackgroundSoundHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BarCodeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BehindTextHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\boldhs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\book_addressHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Book_angleHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Book_openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\book_reportHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Book_StackOfReportsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BreakpointHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BringForwardHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\BringToFrontHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CalculatorHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Calendar_scheduleHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CanvasScaleHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CascadeWindowsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CenterAcrossHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CheckBoxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CheckGrammarHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CheckSpellingHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Color_font.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Color_fontHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ColorHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CommentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\compareversionsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ConflictHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CopyFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CopyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\CutHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_MoveFirsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_MoveFirstHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_MoveLastHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_MoveNextHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_MovePreviousHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DataContainer_NewRecordHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DeleteFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DialHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DisplayInColorHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DocumentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DoubleLeftArrowHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\DoubleRightArrowHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Edit_RedoHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Edit_UndoHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\EditBrightContrastHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\EditCodeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\EditInformationHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\EditTableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\EnvelopeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\eps_closedHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\eps_open_largelHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\eps_openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ExpandSpaceHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ExpirationHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FaxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FillDownHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FillLeftHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FillRightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FillUpHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Filter2HS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FindHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FindNextHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Flag_blueHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Flag_greenHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Flag_redHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FlipHorizontalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FlipVerticalHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FontDialogHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FontHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FontSchemeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FormRunHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FormulaEvaluatorHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FullScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FullScreenHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\FunctionHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoLtrHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoRtlHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoToNextHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoToParentFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoToPrevious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GoToPreviousMessage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\GotoShortcutsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\graphhs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HighlightHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HomeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HtmlBalanceBracesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HTMLPageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HTMLPasswordHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\HTMLSubmitHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ImportXMLHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\IndentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\InsertHyperlinkHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\InsertPictureHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\InsertTabControlHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ItalicHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\LegendHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\LineColorHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\List_BulletsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\List_NumberedHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\List_NumberedRTLHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\List_NumberedTBHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\List_NumberedVertTHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\MonthlyViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\MoveFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\MoveToFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\MultiplePagesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NavBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NavForward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NewCardHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NewDocumentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NewFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NewMessageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NewReportHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NextPageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\NoteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\openfolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\OpenSelectedItemHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\OptionsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\OrganizerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\OrgChartHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\OutdentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\pageNumberHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PageUpHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PageWidthHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PasteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PauseHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PauseRecorderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PieChart3DHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PieChartHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PlayHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PointerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PortraitHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PortraitLandscapeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PreviousPageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PrimaryKeyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PrintHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PrintPreviewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PrintSetupHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PropertiesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ProtectFormHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ProtectSubdocumentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PublishPlanHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PublishToWebHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\PushpinHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RadialChartHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RecolorPictureHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RecordHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RefreshDocViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RelationshipsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RenameFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RepeatHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ResizeHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RestartHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RighsRestrictedHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RightArrow2HS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RightArrowHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RightsRestrictedHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RightToLeftDoucmentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RoutingSlipHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\RulerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SaveAllHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SaveAsWebPageHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SaveFormDesignHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\saveHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SearchFolderHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SearchWebHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SendBackwardHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SendToBackHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ShowAllCommentsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ShowGridlines2HS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ShowGridlinesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ShowRulelinesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ShowRulerHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SortHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SortUpHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SpeechMicHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SplitSubdocumentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\StopHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SychronizeListHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\SymbolHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\TableHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\TaskHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\TextboxHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ThumbnailLoadingHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ThumbnailView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ThumbnailViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\TileWindowsHorizontallyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ViewThumbnailsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\WarningHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\WebInsertHyperlinkHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\WindowsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\XMLFileHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\ZoomHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\helix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\helixblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\seqlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\contig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\primertable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\restrictiontable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\alignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\protein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\pirewise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\16\aligncenter.png" />
+    <Resource Include="Resources\16\alignjustify.png" />
+    <Resource Include="Resources\16\alignleft.png" />
+    <Resource Include="Resources\16\alignright.png" />
+    <Resource Include="Resources\16\bold.png" />
+    <Resource Include="Resources\16\color.png" />
+    <Resource Include="Resources\16\copy.png" />
+    <Resource Include="Resources\16\cut.png" />
+    <Resource Include="Resources\16\expandspace.png" />
+    <Resource Include="Resources\16\find.png" />
+    <Resource Include="Resources\16\findnext.png" />
+    <Resource Include="Resources\16\font-decreasesize.png" />
+    <Resource Include="Resources\16\font-increasesize.png" />
+    <Resource Include="Resources\16\fontcolor.png" />
+    <Resource Include="Resources\16\fontdialog.png" />
+    <Resource Include="Resources\16\fontscheme.png" />
+    <Resource Include="Resources\16\highlight.png" />
+    <Resource Include="Resources\16\indent.png" />
+    <Resource Include="Resources\16\inserthyperlink.png" />
+    <Resource Include="Resources\16\inserttabcontrol.png" />
+    <Resource Include="Resources\16\italic.png" />
+    <Resource Include="Resources\16\linecolor.png" />
+    <Resource Include="Resources\16\list-bullets.png" />
+    <Resource Include="Resources\16\list-numbered-tb.png" />
+    <Resource Include="Resources\16\list-numbered.png" />
+    <Resource Include="Resources\16\new.png" />
+    <Resource Include="Resources\16\outdent.png" />
+    <Resource Include="Resources\16\paste.png" />
+    <Resource Include="Resources\16\pointer.png" />
+    <Resource Include="Resources\16\print.png" />
+    <Resource Include="Resources\16\pushpin.png" />
+    <Resource Include="Resources\16\recolorpicture.png" />
+    <Resource Include="Resources\16\ruler.png" />
+    <Resource Include="Resources\16\save.png" />
+    <Resource Include="Resources\16\sortasc.png" />
+    <Resource Include="Resources\16\strikeout.png" />
+    <Resource Include="Resources\16\subscript.png" />
+    <Resource Include="Resources\16\superscript.png" />
+    <Resource Include="Resources\16\synchronizelist.png" />
+    <Resource Include="Resources\16\underline.png" />
+    <Resource Include="Resources\16\undo.png" />
+    <Resource Include="Resources\16\zoom.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
