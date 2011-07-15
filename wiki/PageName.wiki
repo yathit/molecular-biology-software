@@ -1,0 +1,65 @@
+= Software Requirement Specification =
+
+== Use cases A: Sequence creation, editing and annotation ==
+
+=== Use case A11: Vector Sequence creating from (sequence+annotation) ===
+
+It is common that vendor (such as invitrogen) provide sequence in plain text and its annotation in pdf file or other text. User want to build the information into PlasmidRecord and later it is use for visualization or other manupulation.
+User get the sequence (usually from the web. eg:  http://www.clontech.com/images/pt/PT3715-SEQ.txt)
+User get its additional iniformation (usually from catelog or web. eg: http://www.clontech.com/images/pt/PT3715-5.pdf )
+Create new sequence (screenshoot )
+Save the file for later use
+ 
+
+=== Use case A12: Vector sequence creating from NCBI database ===
+
+ Use know vector accession number and want to get into our software
+Search in our search dialogbox entering accession number (Eg. NC_000913)
+Search result hits are display
+User choose the correct one by clicking
+The selected GenBank data from NCBI database are downloaded
+Display sequence
+User may save the file
+
+=== Use case A21: Copying ===
+
+User select a portion of sequence
+By mouse drag
+By clicking to a annotation
+Copy it
+User may paste 
+Other text receiving application
+Creat new PlasmidRecord
+Paste to existing PlasmidRecord
+
+
+=== Use case A31: Sequence annotation ===
+
+This is continuation from Use case A11, however may process from at any time while user designing the plasmid
+User get its annotation (usually from catelog or web. eg: http://www.clontech.com/images/pt/PT3715-5.pdf )
+Add annotations (screenshoot1, screenshoot2 )
+User may save the update
+
+
+=== Use case A32: Sequence annotation edition ===
+
+User select the annotation
+Edit annotation
+User may save the update
+User may undo the changes
+Use case A33: Sequence annotation deletion
+
+User select the annotation
+Delete the selected annotation
+User may undo delete
+ 
+=== Use case A41: Insert Restriction Sites ===
+
+User select a region
+Commend to insert restriction sites (one of the following)
+Insert Restriction sites after the selection
+Insert Restriction sites before the selection
+Insert Restriction site inside the selection
+Insert Restriction site outside the selection 
+ 
+ 
