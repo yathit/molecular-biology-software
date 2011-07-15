@@ -20,6 +20,8 @@ using BioCSharp.Seqs;
 using BioCSharp.Algo;
 using iMoBio.Controls;
 using BioCSharp.Algo.Phylo;
+using Divelements.SandRibbon;
+using Xceed.Wpf;
 
 
 namespace iMoBio
@@ -38,7 +40,7 @@ namespace iMoBio
             InitializeComponent();
             INSTANT = this;
             AppBase.PropertyGrid = propertyGrid;
-            //AppBase.LayerGrid = dgdLayer;
+            AppBase.LayerGrid = dgdLayer;
            
 
 
@@ -592,7 +594,7 @@ namespace iMoBio
             set
             {
 
-                //INSTANT.dgdLayer.ItemsSource = value;
+                INSTANT.dgdLayer.ItemsSource = value;
                 
 
                 // Make combobox

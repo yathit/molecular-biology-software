@@ -374,7 +374,7 @@ namespace BioCSharp.Algo.Phylo
                 }
                 catch (IndexOutOfRangeException e)
                 {
-                    throw new InvalidOperationException("Incorrect element in B at row " + i + e.Message);
+                    throw new InvalidOperationException("Incorrect element in B at row " + i);
                 }
             }
             #endregion

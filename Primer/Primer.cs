@@ -35,7 +35,7 @@ namespace iMoBio.Primer
         int minHpinBases = 3;
         int minHpinLoop = 2;
         int minDimerLength = 2;
-        //int minDimerCount = 4;
+        int minDimerCount = 4;
         List<Primers> primers = new List<Primers>();
 
         /// <summary>

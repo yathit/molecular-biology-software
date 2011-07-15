@@ -123,7 +123,7 @@ namespace iMoBio.PlasmidCanvas
                 if (e.LeftButton == MouseButtonState.Pressed)
                 {
                     // Do a selection
-                    Plasmid.SelectTo(GetSelectionBase(loc));
+                    PlasmidRecord.SelectTo(GetSelectionBase(loc));
                 }
                 e.Handled = true;
             }
@@ -139,7 +139,7 @@ namespace iMoBio.PlasmidCanvas
                 {
                     // TODO: multiple selection feature
                     // Start a selection
-                    Plasmid.SelectStart(bp);
+                    PlasmidRecord.SelectStart(bp);
                     //Console.WriteLine("To: " + bp + blockNo * numberOfCharPerLine);
                 }
             }
@@ -214,7 +214,7 @@ namespace iMoBio.PlasmidCanvas
             /// Drawing process ///
             #region Initialize variables
             /// Base values are defined base on zooms, visible layers
-            long bp = Plasmid.BaseCount;
+            long bp = PlasmidRecord.BaseCount;
             Radius = Scale * 100;
             if (Radius < 20) Radius = 20;
 

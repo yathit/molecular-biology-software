@@ -1,11 +1,11 @@
 ﻿<Window x:Class="iMoBio.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
     xmlns:h="clr-namespace:BaseLibrary;assembly=ResourceLibrary"
     xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
     xmlns:sd="clr-namespace:Divelements.SandDock;assembly=Divelements.SandDock"
     xmlns:local="clr-namespace:iMoBio"
+     xmlns:xcdgc="http://schemas.xceed.com/wpf/xaml/datagrid"
     Title="Molecular Biology Software" Height="400" Width="800" 
     Loaded="Window_Loaded"
     Closing="Window_Closing" SnapsToDevicePixels="True" 
@@ -174,7 +174,14 @@
                     <sd:WindowGroup Pinned="True">
 
                         <sd:DockableWindow Title="Layer setting" Name="layerSetting" Guid="7E96DC4F-8FDF-46f5-A11E-C09B78824D87">
-                            
+                            <xcdgc:DataGridControl Name="dgdLayer" >
+                                <xcdgc:DataGridControl.View>
+                                    <xcdgc:TableView  UseDefaultHeadersFooters="False">
+
+                                    </xcdgc:TableView>
+                                </xcdgc:DataGridControl.View>
+
+                            </xcdgc:DataGridControl>
 
                         </sd:DockableWindow>
                     </sd:WindowGroup>

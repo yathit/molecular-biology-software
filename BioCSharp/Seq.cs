@@ -265,7 +265,7 @@ namespace BioCSharp
                 // because seq could be upper or lower case
                 const string DNAChars = "AGCTNagctn";
                 const string RNAChars = "AGCUNagcun";
-                //const string NucleotideChars = "ACGTURYNacgturyn";
+                const string NucleotideChars = "ACGTURYNacgturyn";
 
                 if (seq == null)
                     return Alphabet.Unknown;

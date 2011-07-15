@@ -16,7 +16,7 @@ namespace iMoBio.PlasmidCanvas
         /// <summary>
         /// Get or set the plasmid
         /// </summary>
-        PlasmidRecord Plasmid { get; set; }
+        PlasmidRecord PlasmidRecord { get; set; }
 
         /// <summary>
         /// Set zoom level. Generally zoom level is specify in percentage. However mouse wheel
