@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="iMoBio.Controls.MultiAlignControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel  MinHeight="50" Grid.Column="0" Orientation="Vertical">
+                <Canvas >
+                    <Label Background="Bisque">CONSENSUS</Label>
+                </Canvas>
+                <ScrollViewer Name="idScroller" VerticalScrollBarVisibility="Hidden">
+                </ScrollViewer>
+            </StackPanel>
+
+            <GridSplitter Grid.Column="1" Width="3" ShowsPreview="False" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            </GridSplitter>
+
+            <Grid Margin="5,5,0,0"  Name="mainPanel" Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollViewer Grid.Row="0" Name="concensusScroller" HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Disabled">
+                </ScrollViewer>
+                <ScrollViewer Grid.Row="1"  Name="seqScroller" 
+                              HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <StackPanel   MinWidth="50" Name="seqPanel" Orientation="Vertical">
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+        </Grid>
+
+      
+        
+    </Grid>
+</UserControl>

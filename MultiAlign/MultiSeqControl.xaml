@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="iMoBio.Controls.MultiSeqControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:main="clr-namespace:iMoBio.Controls"
+    MinHeight="20" MinWidth="30">
+
+
+    <ListView Margin="4" Name="listView">
+        <ListView.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Select All"/>
+                <MenuItem Command="main:Commands.MultiAlign" 
+                          CommandParameter="MultiSeqControl"
+                          Header="Create alignment">
+                    <!-- FIXME: Wanna bind CommandParameter to selected elements, but don't know how -->
+                </MenuItem>
+            </ContextMenu>
+        </ListView.ContextMenu>
+        <ListView.View>
+            <GridView>
+                <GridView.Columns>
+                    <GridViewColumn Header="Name"
+                                    DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Length" 
+                                    DisplayMemberBinding="{Binding Path=Length}"/>
+                    <GridViewColumn Header="Sequence"
+                                    DisplayMemberBinding="{Binding Path=Sequence}"/>
+                </GridView.Columns>
+            </GridView>
+        </ListView.View>
+    </ListView>
+</UserControl>

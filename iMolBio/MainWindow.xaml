@@ -1,0 +1,199 @@
+﻿<Window x:Class="iMoBio.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:h="clr-namespace:BaseLibrary;assembly=ResourceLibrary"
+    xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:sd="clr-namespace:Divelements.SandDock;assembly=Divelements.SandDock"
+    xmlns:local="clr-namespace:iMoBio"
+    Title="Molecular Biology Software" Height="400" Width="800" 
+    Loaded="Window_Loaded"
+    Closing="Window_Closing" SnapsToDevicePixels="True" 
+    >
+
+    <Window.Resources>
+        <Style x:Key="PlainButton" TargetType="Button">
+            <Setter Property="Control.Background" Value="White" />
+            <Setter Property="Control.Margin" Value="0" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.BorderBrush" Value="Transparent"/>
+        </Style>
+
+
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" SnapsToDevicePixels="True">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" >
+                    
+                </MenuItem>
+                <MenuItem Header="_Open..." />
+                <Separator />
+                <MenuItem Header="E_xit" Click="OnExit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut"  />
+                <MenuItem Header="_Copy"  />
+                <MenuItem Header="_Paste"  />
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Zoom"  />
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Options..." />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="Contents" />
+                <MenuItem Header="About.." Click="About_Click" />
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top" Height="Auto" Name="toolBarTray1">
+            <ToolBar  Name="toolBarStandard" SnapsToDevicePixels="True">
+                <ToolBar.Resources>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Width" Value="16" />
+                    </Style>
+                </ToolBar.Resources>
+                <Button  Name="btnNew" Command="New">
+                    <Image Source="Resources\icons\NewDocumentHS.png" ToolTip="New" />
+                </Button>
+                <Button Name="btnOpen" Command="Open">
+                    <Image Source="Resources\icons\openHS.png" ToolTip="Open file" />
+                </Button>
+                <Button Name="btnSave" Command="Save" >
+                    <Image Source="Resources\icons\saveHS.png" ToolTip="Save" />
+                </Button>
+                <Separator />
+                <Button Name="btnCut" Command="Cut" >
+                    <Image Source="Resources\icons\CutHS.png" ToolTip="Cut" />
+                </Button>
+                <Button Name="btnCopy" Command="Copy" >
+                    <Image Source="Resources\icons\CopyHS.png" ToolTip="Copy" />
+                </Button>
+                <Button Name="btnPaste" Command="Paste" >
+                    <Image Source="Resources\icons\PasteHS.png" ToolTip="Paste" />
+                </Button>
+                <Separator/>
+                <Button  Name="btnUndo" Command="Undo" >
+                    <Image Source="Resources\icons\Edit_UndoHS.png" ToolTip="Undo" />
+                </Button>
+                <Button Name="btnRedo" Command="Redo" >
+                    <Image Source="Resources\icons\Edit_RedoHS.png" ToolTip="Redo" />
+                </Button>
+                <!--
+                <Separator/>
+                <Button Name="btnSpeak" >
+                    <Image Source="Resources\icons\SpeechMicHS.png" ToolTip="Speak" />
+                </Button>
+                -->
+                <Separator/>
+                <Button Name="btnPrint" Command="Print" >
+                    <Image Source="Resources\icons\PrintHS.png" ToolTip="Print" />
+                </Button>
+                <Button Name="btnPrintPreview" Command="PrintPreview" >
+                    <Image Source="Resources\icons\PrintPreviewHS.png" ToolTip="Print preview" />
+                </Button>
+                <Separator/>
+                <ComboBox KeyDown="ComboBox_KeyDown" IsEditable="True" 
+                          SelectionChanged="ComboBox_SelectionChanged" 
+                          h:HelpProvider.HelpID="2"
+                          Name="comboBoxZoom" SelectedIndex="5" Width="80" ToolTip="Zoom">
+                    <ComboBoxItem>6400%</ComboBoxItem>
+                    <ComboBoxItem>1600%</ComboBoxItem>
+                    <ComboBoxItem>800%</ComboBoxItem>
+                    <ComboBoxItem>400%</ComboBoxItem>
+                    <ComboBoxItem>200%</ComboBoxItem>
+                    <ComboBoxItem>100%</ComboBoxItem>
+                    <ComboBoxItem>75%</ComboBoxItem>
+                    <ComboBoxItem>50%</ComboBoxItem>
+                    <ComboBoxItem>25%</ComboBoxItem>
+                    <ComboBoxItem>Fit</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+            <ToolBar Name="toolBarMolBio">
+                <Button Name="btnRestrict" ToolTip="Digest vector" >
+                    <Image Source="Resources\16\cut.png" />
+                </Button>
+                <Button    Name="btnMultiAlign" ToolTip="Create multiple alignment" >
+                    <Image Source="Resources\icons\alignment.png" />
+                </Button>
+                <Button Name="btnPhyTree" ToolTip="Create phylogenetic tree">
+                    <Image Source="Resources\icons\tree.png"/>
+                </Button>
+            </ToolBar>
+         
+        </ToolBarTray>
+        <StatusBar DockPanel.Dock="Bottom" Height="23" Name="statusBar1" BorderThickness="1" />
+        <sd:DockSite Name="dockSite">
+            <sd:DockSite.SplitContainers>
+                <sd:SplitContainer sd:DockSite.Dock="Left">
+                    <sd:WindowGroup Pinned="True">
+                        <sd:DockableWindow Title="Explorer" Guid="feffba11-2b31-4361-ab14-3b5dd82b2912"
+                                           Description="Contains all data record.">
+
+                            <Grid Name="explorerGrid" >
+                                <TreeView Name="explorerTreeView"
+                                          				ScrollViewer.VerticalScrollBarVisibility="Auto"
+				                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                                          TreeViewItem.Expanded="item_Expanded">
+
+
+                                </TreeView>
+                            </Grid>
+
+                        </sd:DockableWindow>
+                    </sd:WindowGroup>
+                </sd:SplitContainer>
+
+                <sd:SplitContainer sd:DockSite.Dock="Bottom" sd:DockSite.ContentSize="100">
+                    <sd:WindowGroup Pinned="False">
+                        <sd:DockableWindow Title="Message" Name="messageWindow" Guid="feffba11-2b31-4361-ab14-3b5dd80b2952">
+                            <TextBox Name="logTextBox"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+				                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                 />
+                        </sd:DockableWindow>
+                    </sd:WindowGroup>
+
+                   
+
+                </sd:SplitContainer>
+
+                <sd:SplitContainer sd:DockSite.Dock="Right">
+                    <sd:WindowGroup Pinned="False">
+                        <sd:DockableWindow Title="Property" Name="propertyWindow" Guid="d01b40e7-76bf-417a-977f-2f4888333ee2">
+                            <Grid>
+                                <WindowsFormsHost>
+                                    <swf:PropertyGrid x:Name="propertyGrid"/>
+                                </WindowsFormsHost>
+                            </Grid>
+                        </sd:DockableWindow>
+                    </sd:WindowGroup>
+
+                    <sd:WindowGroup Pinned="True">
+
+                        <sd:DockableWindow Title="Layer setting" Name="layerSetting" Guid="7E96DC4F-8FDF-46f5-A11E-C09B78824D87">
+                            
+
+                        </sd:DockableWindow>
+                    </sd:WindowGroup>
+                </sd:SplitContainer>
+
+
+
+  
+
+
+
+            </sd:DockSite.SplitContainers>
+            <sd:DocumentContainer>
+                <sd:SplitContainer>
+
+                </sd:SplitContainer>
+            </sd:DocumentContainer>
+        </sd:DockSite>
+
+    </DockPanel>
+
+</Window>
