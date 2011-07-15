@@ -1,0 +1,14 @@
+# Screen shoot of the software
+
+Multiple sequence alignment 
+[http://commondatastorage.googleapis.com/www.yathit.com/static/iMolBio/multialign.PNG]
+
+Sequence view
+[http://commondatastorage.googleapis.com/www.yathit.com/static/iMolBio/plasmid.PNG]
+
+Trace file view
+[http://commondatastorage.googleapis.com/www.yathit.com/static/iMolBio/trace.PNG]
+
+
+Phylogenetic tree
+[http://commondatastorage.googleapis.com/www.yathit.com/static/iMolBio/tree.PNG]
