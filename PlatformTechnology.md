@@ -1,0 +1,42 @@
+# Platform and Technology #
+
+Discussion
+
+This is most important decision. First decision is whether we do multi platform framework using java or not. Borland CLX platform has gone. I assume Qt/GTK/Tcl are powerful enough for our case. I use Java swing API for Cellware cross platform application for two year. Writing fast responsive require very careful, paintaking optimization. To get native plotfrom look and feel is tough and require extensive fine tuning and often conflict logic form one platform to another. Most of algorithm are implemented in C++ and native invocation will be require anyways. Basically i don't think we can develop quality software within two year using Java.
+
+So we will use the best framework for each platform. .NET for windows and cocca for OS X. We don't care about Linux. We left Linux platform for commmunity development work. Because it is difficult to convince linux guy to 3,000 fanncy software (yes basically practically our software non-GUI functionality can be obtained by open soure). They are fine with free scripting. Also targeting in many Linux destro cannot get revenue per effort.
+We will first target at Windows platform because it is more commonly used and have largest market of the three main platform. We will port to OS X at some point after getting return on investment.
+
+Another point is should be also target for web application. It is possible to develop user interaction on the web as web 2.0 are looming in few year down the line. But I think we do not have enough men power for web application development. Web application require more intensive support then web application and people are also not feel confortable with paying for web application then desktop application. Please note we have Server Edition which provide data access and reporting to client as well as on the web pages.
+
+## WPF framework ##
+
+WPF is newer Windows UI development framework starting. I personally think Microsft new windows development framework WPF is good choice. MFC is outdated and Winform is OK but subtle different look and feel of areo. One reason for choosing WPF is its graphic render process and ability to get DPI indepedent graphic. It is extremely optimze using hardware acceleration and the framework provide effective implimation. However, I far I find, WPF is very slow as number of UI components increase in the graphic canvas. Horrible.
+
+The problem with WPF framework is luck of some component specifically multi document feature, datagrid, property editor and undoing manager. I bought Sanddock for multi document support. For datagrid, xceed has free package. We can use Winform property editor. Undoing feature will be tough.
+However we should aware that WPF framework is not well established framework.
+
+WCF workflow is also planed since it is very appriorate with Bioinformatic workflow. See Taverna for detail.
+.NET 3.5
+
+We will use latest version of .NET framework 3.5. Data query will be implement using LINQ syntex.
+LINQ
+
+All implimentation must use LINQ syntex whenever appriorate, especially Math and Database module.
+C# 3.0
+
+C# 3.0 is preferred language.
+High performance computation
+
+High computational recource is common with bioinformatic algorith. All bioinformatic will run in the background with custom queue system. We course gain parallel executation in the queue system. Fine grain optimization is likely to do using Intel compiler. I expect standard Grid-based distributed execution will be support in WCF.
+Implementation
+
+All UI modules will be manage .NET assemble implemented in C# 3.0 language. Most bioinformatic algorithm are available as C++ or unfrequently in C. We will not attempt to convert C#, but compile as following:
+Use VC++ compiler to compile as manage assembly
+If we could not get manage assembly, we use unmanage but safe code (without raw pointer)
+If not, use CLI it-just-work technology to generate .NET assembly
+If not, compile as static link library (32 and 64 bit) and write VC++ manage wrapper
+If not, compile as dynamic link library (32 and 64 bit) and write VC++ manage wrapper
+Compiles as COM is an option but not preferred
+Python and perl code need to convert manually to C#. But so far i found all available in C/C++ alternative. biocsharp C# module (written from scratch for bioinofrmatic fundenmentals) is inspire by biopython module.
+There is no java code in bioinformatics except some bioinformatic web service use.
